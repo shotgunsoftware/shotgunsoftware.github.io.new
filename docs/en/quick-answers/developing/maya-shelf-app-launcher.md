@@ -31,7 +31,7 @@ try:
     # find the current instance of the app.
     # You can print current_engine.commands to list all available commands.
     command = current_engine.commands.get(tk_app) 
-    if not app: 
+    if not command: 
         cmds.error("The Toolkit app '%s' is not available!" % tk_app) 
 
     # now we have the command we need to call the registered callback
