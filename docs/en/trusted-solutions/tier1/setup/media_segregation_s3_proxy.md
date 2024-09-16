@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Media Traffic Isolation - S3 Proxy
+title: "Media Traffic Isolation - S3 Proxy"
 pagename: tier1-setup-media_segregation_s3_proxy
 lang: en
 ---

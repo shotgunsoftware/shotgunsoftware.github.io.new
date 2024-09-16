@@ -17,6 +17,14 @@ jobs:
         with:
           # we need to checkout tk-doc-generator submodule as well.
           submodules: 'true'
+      - name: Lint markdown
+        uses: avto-dev/markdown-lint@v1.5.0
+        with:
+          args: './docs/**/*.md'
+
+        # TODO: REMOVE
+        continue-on-error: true
+      
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -40,3 +48,10 @@ jobs:
           DOC_PATH:
           PR_NUMBER: ${{ github.event.number }}
         run: python ./tk-doc-generator/actions-generate-docs.py
+      - name: Check for broken links
+        uses: filiph/linkcheck@v2.0.15+1
+        with:
+          arguments: http://sg-devdocs.s3-website-us-east-1.amazonaws.com/tk-doc-generator/${{ github.sha }}/
+
+        # TODO: REMOVE
+        continue-on-error: true
