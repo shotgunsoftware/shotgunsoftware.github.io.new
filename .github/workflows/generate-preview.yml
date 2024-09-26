@@ -37,6 +37,6 @@ jobs:
           S3_BUCKET: sg-devdocs
           S3_WEB_URL: http://sg-devdocs.s3-website-us-east-1.amazonaws.com
           DOC_URL: https://developer.shotgridsoftware.com
-          DOC_PATH:
+          DOC_PATH: /
           PR_NUMBER: ${{ github.event.number }}
         run: python ./tk-doc-generator/actions-generate-docs.py
