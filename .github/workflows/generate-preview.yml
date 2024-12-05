@@ -21,6 +21,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
+          # Force bundler to 1.17.2 to match the Dockerfile configuration
+          bundler: 1.17.2
       - name: Install Pandoc
         run: sudo apt-get install -y pandoc
       - name: Bundle config
